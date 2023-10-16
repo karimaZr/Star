@@ -1,0 +1,47 @@
+legend{
+    color: red;
+    font-family: verdana;
+    font-size: 12px;
+    text-align: center;  
+}
+
+fieldset{
+     border-radius: 20px 10px; 
+     border: background dashed;
+     background-color: antiquewhite;
+     margin: auto;
+     width: 400px;
+}
+
+tr td:last-child{
+    color: red;
+}
+
+tr td:first-child{
+    font-family: arial;
+    font-size: 12px;
+    font-style: italic;
+    text-shadow: 1px 1px;
+}
+
+input, select{
+    border-radius: 5px;
+    background-color: azure;
+    border: green dashed;
+}
+
+input:hover{
+    background-color: bisque ;
+    border: black dashed;
+}
+
+input:focus{
+    background-color: aliceblue ;
+    border: black dotted;
+}
+
+button:hover{
+    width: 100px;
+    background-color: bisque;
+}
+

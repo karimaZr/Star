@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style/css.css" rel="stylesheet" type="text/css"/>
+        <script src="script/script.js" type="text/javascript"></script>
+    </head>
+    <body>
+        
+            <fieldset>
+                <legend>Inscription</legend>
+                <table>
+
+                    <tr>
+                        <td>Nom  </td>
+                        <td><input type="text" name="nom" pattern="[A-Z]*" autofocus="" value="" required="" title="Vous devez saisir le nom" /></td>
+                        <td>*</td>
+                    </tr>
+                    <tr>
+                        <td>Prénom  </td>
+                        <td><input type="text" name="prenom" pattern="[A-Z][a-z]*" value="" required="" /></td>
+                        <td>*</td>
+                    </tr>
+                    <tr>
+                        <td>Email  </td>
+                        <td><input type="email" name="email" value=""  required=""/></td>
+                        <td>*</td>
+                    </tr>
+                    <tr>
+                        <td>Date de Naissance  </td>
+                        <td><input type="date" name="dateNaissance" value="" /></td>
+                        <td>*</td>
+                    </tr>
+                    <tr>
+                        <td>Telephone </td>
+                        <td><input type="tel" name="tel" value="" /></td>
+                        <td>*</td>
+                    </tr>
+                    <tr>
+                        <td>Sexe</td>
+                        <td>
+                            <input type="radio" name="sexe" value="Femme" checked="checked" />F
+                            <input type="radio" name="sexe" value="Homme" />H
+                        </td>
+                        <td>*</td>
+                    </tr>
+                    <tr>
+                        <td>Mot de passe </td>
+                        <td><input type="password" id="password" value="" /></td>
+                        <td>*</td>
+                    </tr>
+                    <tr>
+                        <td>Confirmez mot de passe</td>
+                        <td><input type="password" id="passwordC" value="" oninput="verifier();" /> <span id="message"></span></td>
+                        <td>*</td>
+                    </tr>
+                    <tr>
+                        <td>Pays</td>
+                        <td>
+                            <select name="pays">
+                                <option>Maroc</option>
+                                <option>Mali</option>
+                            </select>
+                        </td>
+                        <td>*</td>
+                    </tr>
+                    <tr>
+                        <td>Langages Préférés</td>
+                        <td>
+                            <input type="checkbox" name="Langage" value="C++" checked="checked" />C++ 
+                            <br>
+                            <input type="checkbox" name="Langage" value="Java" />Java
+                        </td>
+                        <td>*</td>
+                    </tr>
+                    <tr>
+                        <td><button>Valider</button></td>
+                        <td><button>Annuler</button></td>
+                        <td></td>
+                    </tr>
+
+                </table>
+
+            </fieldset>
+        </form>
+    </body>
+</html>
