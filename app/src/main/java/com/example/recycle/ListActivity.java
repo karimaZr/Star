@@ -3,6 +3,7 @@ package com.example.recycle;
 
 import static android.service.controls.ControlsProviderService.TAG;
 import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.MenuItemCompat;
 
 import android.os.Bundle;
@@ -42,6 +43,10 @@ public class ListActivity extends AppCompatActivity {
         starAdapter = new StarAdapter(this, service.findAll());
         recyclerView.setAdapter(starAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("stars");
+
     }
     public void init(){
         service.create(new Star("kate bosworth", "https://fr.web.img2.acsta.net/c_310_420/pictures/16/03/01/11/43/442909.jpg", 3.5f));
@@ -56,27 +61,24 @@ public class ListActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu2, menu);
+        getMenuInflater().inflate(R.menu.menu2,menu);
         MenuItem menuItem = menu.findItem(R.id.app_bar_search);
-        SearchView searchView = (SearchView) menuItem.getActionView();
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                // Handle text submission here
                 return true;
             }
-
             @Override
             public boolean onQueryTextChange(String newText) {
-                // Handle text change here (e.g., filtering a list)
-                Log.d(TAG, newText);
+                if (starAdapter != null){
+                    starAdapter.getFilter().filter(newText);
+                }
                 return true;
             }
         });
         return true;
     }
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.share){
@@ -91,4 +93,6 @@ public class ListActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }

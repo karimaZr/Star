@@ -6,10 +6,11 @@
         android:icon="@mipmap/loupe1"
         android:title="Search"
         app:showAsAction="always|collapseActionView"
-        app:actionViewClass="androidx.appcompat.widget.SearchView"/>
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
     <item
         android:id="@+id/share"
         android:title="Share"
         app:showAsAction="ifRoom"
         android:icon="@android:drawable/ic_menu_share" />
+
 </menu>
